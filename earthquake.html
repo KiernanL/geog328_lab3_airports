@@ -62,14 +62,13 @@
     <main id="container">
         <div id="side-panel">
 
-            <h2>Earthquake List</h2>
-            <button>Sort by Magnitude</button>
+            <h2>Major Airports</h2>
+            <button>Sort by State</button>
 
             <table>
                 <tr>
-                    <th>id</th>
-                    <th>magnitude</th>
-                    <th>timestamp</th>
+                    <th>Airport Code</th>
+                    <th>State</th>
                 </tr>
             </table>
 
@@ -80,12 +79,12 @@
     <script>
         // Define the Mapbox access token
         mapboxgl.accessToken =
-            'pk.eyJ1Ijoia2llcm5hbmwiLCJhIjoiY2xvd2N0NGF5MHd4YjJpbnZlczloNmhlOCJ9.U7cWJtrOUjFJCgk0NYID5Q';
+            'pk.eyJ1Ijoia2llcm5hbmwiLCJhIjoiY2xvd2UyeWJnMDVkdDJxbnU2bmQ0YzJvayJ9.y4JBna45nFnU_LYKbdKT2g';
 
         // Create the map object
         let map = new mapboxgl.Map({
             container: 'map', // container ID
-            style: 'mapbox://styles/mapbox/satellite-v9', // style URL
+            style: 'mapbox://styles/mapbox/dark-v11', // style URL
             zoom: 5.5, // starting zoom
             center: [138, 38] // starting center
         });
@@ -94,9 +93,9 @@
         async function geojsonFetch() {
 
             let response, earthquakes, japan, table;
-            response = await fetch('assets/earthquakes.geojson');
+            response = await fetch('assets/ne_10m_airports.geojson');
             earthquakes = await response.json();
-            response = await fetch('assets/japan.json');
+            response = await fetch('assets/states_hash.json');
             japan = await response.json();
 
             table = document.getElementsByTagName("table")[0];
@@ -135,15 +134,15 @@
                 });
 
 
-                map.addSource('japan', {
+                map.addSource('gz_2010_us_040_00_500k', {
                     type: 'geojson',
-                    data: japan
+                    data: usa
                 });
 
                 map.addLayer({
-                    'id': 'japan-layer',
+                    'id': 'gz_2010_us_040_00_500k',
                     'type': 'fill',
-                    'source': 'japan',
+                    'source': 'gz_2010_us_040_00_500k',
                     'paint': {
                         'fill-color': '#0080ff', // blue color fill
                         'fill-opacity': 0.5
