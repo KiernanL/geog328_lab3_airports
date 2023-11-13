@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stehekin!</title>
+
+    <!-- Including the main.css file for styling -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Including the Font Awesome CSS library for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation bar -->
+    <div class="topnav" id="myTopnav">
+        <!-- Links to different sections -->
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="attractions.html">Attractions</a>
+
+        <!-- Active link pointing to the section3.html page -->
+        <a class="active" href="visitor_information.html">Visitor Information</a>
+
+        <a href="see_also.html">See Also</a>
+        <!-- <a href="references.html">References</a>
+
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links on smaller screens -->
+        <a href="javascript:void(0);" class="icon">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <!-- Page content -->
+    <div class="content">
+        <!-- Section 3 content -->
+        Season: Stehekin is most accessible during the summer months when the ferry service operates daily.
+        <br>
+        <br>
+        Accomodations: There are limited lodging options and campsites around the town. It is highly recommended to reserve in advance.
+        <br>
+        <br>
+        Services: There are some basic amenities such as a general store and a post office available in town.
+        <br>
+        <br>
+        Cellular service can be poor in the area.
+    </div>
+
+    <style>
+        .signal-icon {
+          width: 50px;
+          height: 50px;
+          background-color: rgb(0, 77, 13);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          position: relative;
+        }
+        
+        .signal-bar {
+          width: 10px;
+          height: 20px;
+          background-color: #f2f2f2;
+          margin: 0 3px;
+          animation: grow 1s infinite alternate;
+        }
+        
+        .bar-1 { animation-delay: 0.2s; }
+        .bar-2 { animation-delay: 0.4s; }
+        .bar-3 { animation-delay: 0.6s; }
+        .bar-4 { animation-delay: 0.8s; }
+        
+        @keyframes grow {
+          0% { transform: scaleY(0.5); }
+          100% { transform: scaleY(1); }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="signal-icon">
+        <div class="signal-bar bar-1"></div>
+        <div class="signal-bar bar-2"></div>
+        <div class="signal-bar bar-3"></div>
+        <div class="signal-bar bar-4"></div>
+      </div>
+
+
+    <!-- Including the main.js file for JavaScript functionality -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

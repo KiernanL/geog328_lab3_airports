@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stehekin!</title>
+
+    <!-- Including the main.css file for styling -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Including the Font Awesome CSS library for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation bar -->
+    <div class="topnav" id="myTopnav">
+        <!-- Links to different sections -->
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+
+        <!-- Active link pointing to the section2.html page -->
+        <a class="active" href="attractions.html">Attractions</a>
+
+        <a href="visitor_information.html">Visitor Information</a>
+        <a href="see_also.html">See Also</a>
+        <!-- <a href="references.html">References</a>
+
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links on smaller screens -->
+        <a href="javascript:void(0);" class="icon">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <!-- Page content -->
+    <div class="content">
+        <!-- Section 2 content -->
+        Stehekin is most notable for outdoor activities and natural beauty. By using the town or one of it’s many campsites as a base, there are several options for recreation.
+    </div>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {box-sizing: border-box}
+    /* body {font-family: "Lato", sans-serif;} */
+
+    /* Style the tab */
+    .tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 30%;
+    height: 300px;
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+    background-color: #ddd;
+    }
+
+    /* Create an active/current "tab button" class */
+    .tab button.active {
+    background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 70%;
+    border-left: none;
+    /*height: 300px;*/
+    } 
+    </style>
+    </head>
+    <body>
+
+    <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Hiking/Camping')" id="defaultOpen">Hiking/Camping</button>
+    <button class="tablinks" onclick="openCity(event, 'Fishing')">Fishing</button>
+    <button class="tablinks" onclick="openCity(event, 'Stargazing')">Stargazing</button>
+    <button class="tablinks" onclick="openCity(event, 'Boating')">Boating</button>
+    <button class="tablinks" onclick="openCity(event, 'SPC')">Stehekin Pastry Company</button>
+    </div>
+
+    <div id="Hiking/Camping" class="tabcontent">
+    <h3>Hiking/Camping</h3>
+    <p>The town is in an idea spot for backcountry hiking and backpacking, being surrounded by wilderness. Trails leading off of the roads through the town snake their way up the mountains to campsites. Natural attractions like Rainbow Falls are attractive natural locations to visit.</p>
+    </div>
+
+    <div id="Fishing" class="tabcontent">
+    <h3>Fishing</h3>
+    <p>Lake Chelan and the Stehekin River offer excellent fishing opportunities.</p> 
+    </div>
+
+    <div id="Stargazing" class="tabcontent">
+    <h3>Stargazing</h3>
+    <p>Stehekin’s remote location and minimal light pollution make it an excellent location for stargazing.</p>
+    </div>
+
+    <div id="Boating" class="tabcontent">
+    <h3>Boating</h3>
+    <p>Lake Chelan is an ideal place for boating, kayaking, and canoeing. Lakeside campsites, clear alpine waters and majestic scenery make for a picturesque boating experience.</p>
+    </div>
+
+    <div id="SPC" class="tabcontent">
+    <h3>Stehekin Pastry Company</h3>
+    <p>Apart from the outdoor activities, the Stehekin Pastry Company is a must-visit. Open during the summer months, they offer a selection of “from-scratch” baked goods inclduing cake, pie, and other pastries. </p> 
+    </div>
+
+    <script>
+    function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
+
+    <!-- Including the main.js file for JavaScript functionality -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
